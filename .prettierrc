@@ -1,0 +1,14 @@
+{
+  "trailingComma": "all",
+  "printWidth": 120,
+  "proseWrap": "never",
+  "arrowParens": "avoid",
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
+}

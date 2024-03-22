@@ -1,0 +1,5 @@
+stories/*
+node_modules/*
+dist/*
+jest.config.js
+.next/
