@@ -4,7 +4,8 @@
     "lib": ["es6", "dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
+    "baseUrl": ".",
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -14,10 +15,17 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "paths": {
-      "@/components": ["./src/components/*"]
+      "@/components/*": ["./src/components/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/context/*": ["./src/context/*"]
     }
   },
-  "include": ["next-env.d.ts", "./**/*.tsx", "./**/*.ts"],
+  "include": ["next-env.d.ts", "./**/*.tsx", "./**/*.ts", "next-i18next.config.js"],
   "exclude": ["node_modules"]
 }

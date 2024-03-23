@@ -1,0 +1,9 @@
+{
+  "auth": {
+    "login": "Giriş yap",
+    "signup": "Kayıt ol",
+    "email": "E-Posta",
+    "password": "Şifre",
+    "dontHaveAnAccount": "Hesabınız yok mu?"
+  }
+}
