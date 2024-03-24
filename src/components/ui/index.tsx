@@ -1,3 +1,4 @@
+import { Avatar, AvatarImage, AvatarFallback } from "./Avatar";
 import { Button, buttonVariants } from "./Button";
 import {
   Dialog,
@@ -11,6 +12,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./Dialog";
+import { Icons } from "./Icons";
 import { Input } from "./Input";
 import { Label } from "./Label";
 
@@ -29,4 +31,8 @@ export {
   DialogFooter,
   DialogTitle,
   DialogDescription,
+  Icons,
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
 };

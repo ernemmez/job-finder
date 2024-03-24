@@ -23,7 +23,8 @@
     "paths": {
       "@/components/*": ["./src/components/*"],
       "@/lib/*": ["./src/lib/*"],
-      "@/context/*": ["./src/context/*"]
+      "@/context/*": ["./src/context/*"],
+      "@/services/*": ["./src/services/*"]
     }
   },
   "include": ["next-env.d.ts", "./**/*.tsx", "./**/*.ts", "next-i18next.config.js"],

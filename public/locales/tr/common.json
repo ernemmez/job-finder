@@ -4,6 +4,21 @@
     "signup": "Kayıt ol",
     "email": "E-Posta",
     "password": "Şifre",
-    "dontHaveAnAccount": "Hesabınız yok mu?"
+    "dontHaveAnAccount": "Hesabınız yok mu?",
+    "validation": {
+      "email": {
+        "required": "Lütfen E-Posta adresinizi girin."
+      },
+      "password": {
+        "required": "Lütfen şifrenizi girin."
+      }
+    },
+    "message": {
+      "error": {
+        "somethingWentWrong": "Üzgünüz, bir şeyler ters gitti. Lütfen tekrar deneyin."
+      },
+      "succes": {},
+      "info": {}
+    }
   }
 }
