@@ -1,3 +1,14 @@
+interface PageMap {
+  [lang: string]: {
+    [page: string]: string;
+  };
+}
+
+interface IPage {
+  ua: UserAgent;
+  page: keyof PageMap;
+}
+
 type TUser = {
   id: string;
   email: string;
@@ -20,4 +31,24 @@ type TLoginSuccesResponse = {
 type TLoginRequestBody = {
   email: string;
   password: string;
+};
+
+type TJob = {
+  companyName: string;
+  id: string;
+  description: string;
+  name: string;
+  createdAt: string;
+  location: string;
+  salary: number;
+  keywords: string[];
+};
+
+type TJobsSuccesResponse = {
+  data: TJob[];
+  meta: {
+    total: number;
+    page: number;
+    perPage: number;
+  };
 };

@@ -1,10 +1,12 @@
 {
   "auth": {
     "login": "Giriş yap",
+    "logout": "Çıkış yap",
     "signup": "Kayıt ol",
     "email": "E-Posta",
     "password": "Şifre",
     "dontHaveAnAccount": "Hesabınız yok mu?",
+    "alreadyhaveAnAccount": "Zaten hesabınız var mı?",
     "validation": {
       "email": {
         "required": "Lütfen E-Posta adresinizi girin."
@@ -15,10 +17,25 @@
     },
     "message": {
       "error": {
-        "somethingWentWrong": "Üzgünüz, bir şeyler ters gitti. Lütfen tekrar deneyin."
+        "somethingWentWrong": "Üzgünüz, bir şeyler ters gitti. Lütfen tekrar deneyin.",
+        "alreadyExists": "Bu E-posta ile daha önce kayıt yapılmış."
       },
       "succes": {},
       "info": {}
     }
-  }
+  },
+  "joblist": "İş İlanları",
+  "footerDesc": {
+    "title": "Başlamaya hazır mısın?",
+    "desc": " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, ducimus omnis? Blanditiis necessitatibus ,quasi, fuga officia dolorem laudantium possimus. Vitae similique recusandae quidem ut obcaecati. Unde labore iusto rem molestias?"
+  },
+  "privacyTerms": "Gizlilik ve Kullanım Koşulları",
+  "error": {
+    "pageDoesNotExist": "Aradığınız sayfa mevcut değil.",
+    "goBack": "Geri dön"
+  },
+  "homepageContent": {
+    "title": "Şimdiye Kadar Bulunan En İyi İş!"
+  },
+  "dynamicJobsPageUrl": "/is-ilanlari"
 }
