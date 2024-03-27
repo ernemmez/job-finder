@@ -6,14 +6,12 @@ import type { AppProps } from "next/app";
 import { appWithTranslation } from "next-i18next";
 import type { UserAgent } from "next-useragent";
 
-import ContentLayout from "@/components/Content";
-
 import { UserDeviceProvider } from "../context/UserDeviceContext";
 
 const App = ({
   Component,
   pageProps,
-}: AppProps<{ ua: UserAgent; dehydratedState: unknown; userLoggedIn: boolean }>) => {
+}: AppProps<{ ua: UserAgent; dehydratedState: unknown; userLoggedIn: boolean; page: string }>) => {
   const [queryClient] = useState<QueryClient>(
     () =>
       new QueryClient({
@@ -31,9 +29,7 @@ const App = ({
     <QueryClientProvider client={queryClient}>
       <HydrationBoundary state={pageProps.dehydratedState}>
         <UserDeviceProvider value={pageProps.ua}>
-          <ContentLayout userLoggedIn={pageProps.userLoggedIn}>
-            <Component {...pageProps} />
-          </ContentLayout>
+          <Component {...pageProps} />
         </UserDeviceProvider>
       </HydrationBoundary>
     </QueryClientProvider>

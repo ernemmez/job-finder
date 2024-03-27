@@ -6,13 +6,23 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useUserAgent } from "next-useragent";
 import { pathToRegexp } from "path-to-regexp";
 
+import ContentLayout from "@/components/Content";
+import ErrorBoundary from "@/components/Error/ErrorBoundary";
 import { PAGE_MAP, PAGE_TO_METHODS, RenderPage, SupportedLanguages } from "@/lib/utils/pages";
 
-const Slug: NextPage<IPage> = ({ page, ...props }) => {
+const Slug: NextPage<IPage> = ({ page, userLoggedIn, ...props }) => {
   const { locale } = useRouter();
   const Comp = RenderPage(page, locale || "en");
 
-  return <Comp {...props} /> || null;
+  return (
+    <ErrorBoundary>
+      {Comp && (
+        <ContentLayout userLoggedIn={userLoggedIn} pagePath={`${page}`}>
+          <Comp userLoggedIn={userLoggedIn} {...props} />
+        </ContentLayout>
+      )}
+    </ErrorBoundary>
+  );
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ locale, req, resolvedUrl }) => {
@@ -36,15 +46,9 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, req, reso
     };
   }
 
-  console.log("kemalettin -->", req.cookies?.accessToken);
-
   const pageData = PAGE_TO_METHODS($locale)[$PagePath]
     ? await PAGE_TO_METHODS($locale)[$PagePath](`${req.cookies?.accessToken}`)
     : {};
-
-  if (userLoggedIn) {
-    //user logged in
-  }
 
   return {
     props: {

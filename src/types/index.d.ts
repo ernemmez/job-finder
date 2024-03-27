@@ -7,6 +7,8 @@ interface PageMap {
 interface IPage {
   ua: UserAgent;
   page: keyof PageMap;
+  pageData: unknown;
+  userLoggedIn: boolean;
 }
 
 type TUser = {

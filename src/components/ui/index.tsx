@@ -1,3 +1,4 @@
+import { Alert, AlertTitle, AlertDescription } from "./Alert";
 import { Avatar, AvatarImage, AvatarFallback } from "./Avatar";
 import { Button, buttonVariants } from "./Button";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "./Card";
@@ -41,4 +42,7 @@ export {
   CardFooter,
   CardHeader,
   CardTitle,
+  Alert,
+  AlertTitle,
+  AlertDescription,
 };

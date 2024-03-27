@@ -100,21 +100,21 @@ export const getProfile = async (): Promise<TUser> => {
   }
 };
 
-export const refreshTokenReq = async (): Promise<TLoginSuccesResponse | { message: string }> => {
-  try {
-    const { accessToken, refreshToken } = getAuthTokens();
+// export const refreshTokenReq = async (): Promise<TLoginSuccesResponse | { message: string }> => {
+//   try {
+//     const { accessToken, refreshToken } = getAuthTokens();
 
-    return (
-      await BaseAPI.get("refresh", {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-        data: { refreshToken },
-      })
-    ).data;
-  } catch (error) {
-    console.log("Error: Access token couldn't be refreshed.");
-    // logout
-    throw error;
-  }
-};
+//     return (
+//       await BaseAPI.get("refresh", {
+//         headers: {
+//           Authorization: `Bearer ${accessToken}`,
+//         },
+//         data: { refreshToken },
+//       })
+//     ).data;
+//   } catch (error) {
+//     console.log("Error: session destroyed");
+//     // logout
+//     throw error;
+//   }
+// };

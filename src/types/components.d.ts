@@ -17,13 +17,20 @@ interface ISignupModal {
 interface IContentProps {
   children: ReactNode;
   userLoggedIn: boolean;
+  pagePath: string;
 }
 
 interface IJobsPageProps {
   ua: UserAgent;
+  pageData: unknown;
+  userLoggedIn: boolean;
 }
 
 interface IErrorProps {
   status: number;
   ua: UserAgent;
+}
+
+interface ISidebarProps {
+  userLoggedIn: boolean;
 }

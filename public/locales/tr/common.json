@@ -37,5 +37,9 @@
   "homepageContent": {
     "title": "Şimdiye Kadar Bulunan En İyi İş!"
   },
-  "dynamicJobsPageUrl": "/is-ilanlari"
+  "dynamicJobsPageUrl": "/is-ilanlari",
+  "appliedJobs": "Başvurulan İlanlar",
+  "companyName": "Kurum Adı",
+  "location": "Lokasyon",
+  "noJobs": "Henüz bir işe başvurmadınız."
 }

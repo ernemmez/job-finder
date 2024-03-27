@@ -37,5 +37,9 @@
   "homepageContent": {
     "title": "Best Position Ever Found!"
   },
-  "dynamicJobsPageUrl": "/jobs"
+  "dynamicJobsPageUrl": "/jobs",
+  "appliedJobs": "Applied Jobs",
+  "companyName": "Company Name",
+  "location": "Location",
+  "noJobs": "You haven't applied for a job yet."
 }

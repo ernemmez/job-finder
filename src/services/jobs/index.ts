@@ -4,7 +4,6 @@ import axios from "axios";
 import { BaseAPI } from "..";
 
 export const getAllJobs = async (accessToken: string): Promise<TJobsSuccesResponse> => {
-  console.log("eren emmez");
   try {
     return (
       await BaseAPI.get("jobs", {
