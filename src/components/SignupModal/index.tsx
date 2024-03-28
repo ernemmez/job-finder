@@ -17,11 +17,11 @@ import {
   DialogDescription,
   Icons,
 } from "@/components/ui";
-import { loginReq, setAuthTokens } from "@/services/auth";
+import { setAuthTokens, signUpReq } from "@/services/auth";
 
 import { LoginSchema } from "../Validation";
 
-const LoginModal: FC<ILoginModal> = ({ open, close, openSignUpModal }) => {
+const SignupModal: FC<ISignupModal> = ({ open, close, openLoginModal }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean | string>(false);
 
@@ -39,14 +39,15 @@ const LoginModal: FC<ILoginModal> = ({ open, close, openSignUpModal }) => {
     setLoading(true);
 
     try {
-      const { accessToken, refreshToken } = await loginReq(formData);
+      const { accessToken, refreshToken } = await signUpReq(formData);
       setLoading(false);
       error && setError(false);
       setAuthTokens(accessToken, refreshToken);
       reload();
     } catch (error) {
+      console.log("error", error);
       setLoading(false);
-      setError(true);
+      setError(error === "User already exists" ? t("auth.message.error.alreadyExists") : true);
     }
   };
 
@@ -54,11 +55,11 @@ const LoginModal: FC<ILoginModal> = ({ open, close, openSignUpModal }) => {
     <Dialog open={open} onOpenChange={close}>
       <DialogContent className="lg:max-w-auto lg:min-w-[425px] max-w-[325px] rounded-md">
         <DialogHeader>
-          <DialogTitle className="text-3xl text-center mt-2">{t("auth.login")}</DialogTitle>
+          <DialogTitle className="text-3xl text-center mt-2">{t("auth.signup")}</DialogTitle>
           {loading && <Icons.spinner className="h-6 w-6 m-auto animate-spin" />}
           {error && (
             <DialogDescription className="text-red-700 text-center text-xs">
-              {t("auth.message.error.somethingWentWrong")}
+              {typeof error === "boolean" ? t("auth.message.error.somethingWentWrong") : error}
             </DialogDescription>
           )}
         </DialogHeader>
@@ -103,17 +104,17 @@ const LoginModal: FC<ILoginModal> = ({ open, close, openSignUpModal }) => {
             </div>
             <DialogFooter className="block text-center px-12">
               <Button type="submit" className="w-full mb-1">
-                {t("auth.login")}
+                {t("auth.signup")}
               </Button>
               <Label>
-                {t("auth.dontHaveAnAccount")}{" "}
+                {t("auth.alreadyhaveAnAccount")}{" "}
                 <Button
                   variant="ghost"
                   className="p-0 h-auto text-blue-600 hover:bg-transparent"
-                  onClick={openSignUpModal}
+                  onClick={openLoginModal}
                   disabled={loading}
                 >
-                  {t("auth.signup")}
+                  {t("auth.login")}
                 </Button>
                 .
               </Label>
@@ -125,4 +126,4 @@ const LoginModal: FC<ILoginModal> = ({ open, close, openSignUpModal }) => {
   );
 };
 
-export default LoginModal;
+export default SignupModal;

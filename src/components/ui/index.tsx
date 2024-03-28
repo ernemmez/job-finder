@@ -1,5 +1,7 @@
+import { Alert, AlertTitle, AlertDescription } from "./Alert";
 import { Avatar, AvatarImage, AvatarFallback } from "./Avatar";
 import { Button, buttonVariants } from "./Button";
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "./Card";
 import {
   Dialog,
   DialogClose,
@@ -35,4 +37,12 @@ export {
   Avatar,
   AvatarImage,
   AvatarFallback,
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  Alert,
+  AlertTitle,
+  AlertDescription,
 };
