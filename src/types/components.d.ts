@@ -22,15 +22,19 @@ interface IContentProps {
 
 interface IJobsPageProps {
   ua: UserAgent;
-  pageData: unknown;
+  pageData: TJobsSuccesResponse;
   userLoggedIn: boolean;
 }
 
 interface IErrorProps {
-  status: number;
-  ua: UserAgent;
+  status?: number;
+  ua?: UserAgent;
 }
 
 interface ISidebarProps {
   userLoggedIn: boolean;
+}
+
+interface IResultProps {
+  result: TJob[];
 }

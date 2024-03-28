@@ -15,7 +15,14 @@ type TUser = {
   id: string;
   email: string;
   profileImage: string;
-  appliedJobs: string[];
+  appliedJobs: TJob[];
+};
+
+// Zustand
+type TAppliedJobsStore = {
+  appliedJobs: TJob[];
+  add: (job: TJob) => void;
+  addMany: (job: TJob[]) => void;
 };
 
 // Services

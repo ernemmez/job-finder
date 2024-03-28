@@ -20,7 +20,7 @@ const Error: FC<IErrorProps> = ({ status }) => {
     <div className="flex items-center justify-center h-screen bg-black">
       <Card className="w-[420px]">
         <CardHeader className="text-center">
-          <CardTitle className="lg:text-7xl text-4xl">{status}</CardTitle>
+          {status && <CardTitle className="lg:text-7xl text-4xl">{status}</CardTitle>}
           <CardDescription>
             <Alert>
               <Terminal className="h-10 w-10" />
@@ -29,11 +29,13 @@ const Error: FC<IErrorProps> = ({ status }) => {
             </Alert>
           </CardDescription>
         </CardHeader>
-        <CardFooter className="flex justify-center">
-          <Button>
-            <Link href="/">Go Back</Link>
-          </Button>
-        </CardFooter>
+        {status && (
+          <CardFooter className="flex justify-center">
+            <Button>
+              <Link href="/">Go Back</Link>
+            </Button>
+          </CardFooter>
+        )}
       </Card>
     </div>
   );

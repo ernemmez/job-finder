@@ -1,19 +1,27 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 
 import { useQuery } from "@tanstack/react-query";
 import { useTranslation } from "next-i18next";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui";
+import { useAppliedJobsStore } from "@/lib/store/zustand";
 import { getProfile } from "@/services/auth";
 
 const Sidebar: FC<ISidebarProps> = ({ userLoggedIn }) => {
   const { t } = useTranslation("common");
+  const { appliedJobs, addMany } = useAppliedJobsStore();
 
   const { data: profile } = useQuery<TUser>({
     queryKey: ["getProfile"],
     queryFn: getProfile,
     enabled: userLoggedIn,
   });
+
+  useEffect(() => {
+    if (profile?.appliedJobs && profile.appliedJobs.length > 0) {
+      addMany(profile.appliedJobs);
+    }
+  }, []);
 
   return (
     <section className="w-full h-full bg-white border overflow-y-scroll flex flex-col justify-start items-center lg:py-24 gap-8">
@@ -25,18 +33,18 @@ const Sidebar: FC<ISidebarProps> = ({ userLoggedIn }) => {
         <span>{profile?.email}</span>
       </div>
       <div className="text-lg font-bold">{t("appliedJobs")}</div>
-      {profile?.appliedJobs && profile.appliedJobs.length > 0 ? (
-        profile.appliedJobs.map(job => (
-          <div key={job} className="w-full px-12 flex flex-col justify-start items-center">
+      {appliedJobs.length > 0 ? (
+        appliedJobs.map((job, i) => (
+          <div key={i} className="w-full px-12 flex flex-col justify-start items-center">
             <div className="bg-primary-foreground p-4 border w-full rounded-sm">
-              <span className="font-semibold text-center block mb-2">{job}</span>
+              <span className="font-semibold text-center block mb-2">{job.name}</span>
               <p className="text-sm mb-1">
                 <span className="font-semibold">{t("companyName")}: </span>
-                Ipsum Dolor
+                {job.companyName}
               </p>
               <p className="text-sm">
                 <span className="font-semibold">{t("location")}: </span>
-                Irving
+                {job.location}
               </p>
             </div>
           </div>

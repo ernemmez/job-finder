@@ -1,8 +1,6 @@
 import React, { Component, ReactNode } from "react";
 
-import { Terminal } from "lucide-react";
-
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui";
+import Error from "@/components/Error";
 
 export interface IErrorBoundaryProps {
   fallback?: ReactNode;
@@ -33,15 +31,7 @@ class ErrorBoundary extends Component<IErrorBoundaryProps, IErrorBoundaryState> 
 
   render() {
     if (this.state.hasError) {
-      return (
-        this.props.fallback || (
-          <Alert>
-            <Terminal className="h-4 w-4" />
-            <AlertTitle>Heads up!</AlertTitle>
-            <AlertDescription>You're somewhere you shouldn't be :/</AlertDescription>
-          </Alert>
-        )
-      );
+      return this.props.fallback || <Error />;
     }
 
     return <>{this.props.children}</>;

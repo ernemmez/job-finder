@@ -6,7 +6,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useUserAgent } from "next-useragent";
 import { pathToRegexp } from "path-to-regexp";
 
-import ContentLayout from "@/components/Content";
+import ContentLayout from "@/components/ContentLayout";
 import ErrorBoundary from "@/components/Error/ErrorBoundary";
 import { PAGE_MAP, PAGE_TO_METHODS, RenderPage, SupportedLanguages } from "@/lib/utils/pages";
 
@@ -18,6 +18,8 @@ const Slug: NextPage<IPage> = ({ page, userLoggedIn, ...props }) => {
     <ErrorBoundary>
       {Comp && (
         <ContentLayout userLoggedIn={userLoggedIn} pagePath={`${page}`}>
+          {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+          {/* @ts-ignore */}
           <Comp userLoggedIn={userLoggedIn} {...props} />
         </ContentLayout>
       )}

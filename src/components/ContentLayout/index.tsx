@@ -12,7 +12,7 @@ const ContentLayout: FC<IContentProps> = ({ children, userLoggedIn, pagePath }) 
   const isJobsPage = pagePath === PAGE_MAP[`${locale}`].Jobs;
 
   return (
-    <main className={`flex min-h-screen flex-col items-center justify-between bg-primary-foreground`}>
+    <main className="flex min-h-screen flex-col items-center justify-between bg-primary-foreground">
       {!isJobsPage ? (
         <>
           <Header userLoggedIn={userLoggedIn} />
@@ -23,6 +23,7 @@ const ContentLayout: FC<IContentProps> = ({ children, userLoggedIn, pagePath }) 
         <div className="w-full min-h-screen lg:flex">
           <div className="w-3/4">
             <Header userLoggedIn={userLoggedIn} />
+            {children}
           </div>
           <div className="w-1/4">
             <Sidebar userLoggedIn={userLoggedIn} />
