@@ -41,5 +41,35 @@
   "appliedJobs": "Applied Jobs",
   "companyName": "Company Name",
   "location": "Location",
-  "noJobs": "You haven't applied for a job yet."
+  "noJobs": "You haven't applied for a job yet.",
+  "sorryErrorOccured": "Sorry, an error occurred.",
+  "jobItem": {
+    "salary": "Salary",
+    "jobName": "Position",
+    "createdAt": "Created At",
+    "keywords": "Keywords",
+    "jobDesc": "Job Description",
+    "detail": "Detail",
+    "withdraw": "Withdraw",
+    "close": "Close",
+    "apply": "Apply",
+    "applyJob": "Apply Job"
+  },
+  "showAppliedJobs": "Show Applied Jobs",
+  "totalPage": "Total Page",
+  "filter": {
+    "sort": "Sort",
+    "sortings": {
+      "suggested": "Suggested",
+      "salaryCheapToExpensive": "Salary from cheap to expensive",
+      "salaryExpensiveToCheap": "Salary from expensive to cheap"
+    },
+    "search": {
+      "btn": "Search",
+      "placeholder": "Search keyword, position or company",
+      "searchType": "Search Type"
+    }
+  },
+  "explorePositions": "Explore Positions",
+  "searchError": "Please enter a valid search value or select a type"
 }

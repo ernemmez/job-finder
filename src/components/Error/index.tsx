@@ -15,17 +15,17 @@ import {
   AlertTitle,
 } from "@/components/ui";
 
-const Error: FC<IErrorProps> = ({ status }) => {
+const Error: FC<IErrorProps> = ({ status, result }) => {
   return (
-    <div className="flex items-center justify-center h-screen bg-black">
-      <Card className="w-[420px]">
+    <div className={`flex items-center justify-center bg-white ${result ? "h-[600px]" : "h-screen"}`}>
+      <Card className={`w-[420px] ${result && "border-none shadow-none"}`}>
         <CardHeader className="text-center">
           {status && <CardTitle className="lg:text-7xl text-4xl">{status}</CardTitle>}
           <CardDescription>
             <Alert>
               <Terminal className="h-10 w-10" />
-              <AlertTitle>Heads up!</AlertTitle>
-              <AlertDescription>You're somewhere you shouldn't be :/</AlertDescription>
+              <AlertTitle>{result ? "Ooops" : "Heads up!"}</AlertTitle>
+              <AlertDescription>{result || "You're somewhere you shouldn't be :/"}</AlertDescription>
             </Alert>
           </CardDescription>
         </CardHeader>

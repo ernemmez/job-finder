@@ -15,14 +15,26 @@ type TUser = {
   id: string;
   email: string;
   profileImage: string;
-  appliedJobs: TJob[];
+  appliedJobs: string[];
 };
 
 // Zustand
+type TJobsPageStore = {
+  showAppliedJobs: boolean;
+  setShowAppliedJobs: (p: boolean) => void;
+  currentPage: number;
+  totalPages: number;
+  nextPage: () => void;
+  prevPage: () => void;
+  setCurrentPage: (page: number) => void;
+  setTotalPages: (pageNumber: number) => void;
+};
+
 type TAppliedJobsStore = {
   appliedJobs: TJob[];
   add: (job: TJob) => void;
-  addMany: (job: TJob[]) => void;
+  addMany: (jobs: TJob[]) => void;
+  remove: (jobId: string) => void;
 };
 
 // Services

@@ -41,5 +41,35 @@
   "appliedJobs": "Başvurulan İlanlar",
   "companyName": "Kurum Adı",
   "location": "Lokasyon",
-  "noJobs": "Henüz bir işe başvurmadınız."
+  "noJobs": "Henüz bir işe başvurmadınız.",
+  "sorryErrorOccured": "Üzgünüz, bir hata oluştu.",
+  "jobItem": {
+    "salary": "Maaş",
+    "jobName": "Pozisyon",
+    "createdAt": "Oluşturulma Tarihi",
+    "keywords": "Anahtar Kelimeler",
+    "jobDesc": "İş Tanımı",
+    "detail": "Detay",
+    "withdraw": "Geri Çek",
+    "close": "Kapat",
+    "apply": "Başvur",
+    "applyJob": "İşe Başvur"
+  },
+  "showAppliedJobs": "Show Applied Jobs",
+  "totalPage": "Toplam Sayfa",
+  "filter": {
+    "sort": "Sırala",
+    "sortings": {
+      "suggested": "Önerilen",
+      "salaryCheapToExpensive": "Maaşa Göre Ucuzdan Pahalıya Sırala",
+      "salaryExpensiveToCheap": "Maaşa Göre Pahalıdan Ucuza Sırala"
+    },
+    "search": {
+      "btn": "Ara",
+      "placeholder": "Anahtar kelime, pozisyon veya firma ara",
+      "searchType": "Arama Tipi"
+    }
+  },
+  "explorePositions": "Pozisyonları Keşfet",
+  "searchError": "Lütfen geçerli bir arama değeri giriniz veya tip seçiniz"
 }

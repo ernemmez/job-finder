@@ -1,6 +1,9 @@
 import React, { FC } from "react";
 
+import Link from "next/link";
 import { useTranslation } from "next-i18next";
+
+import { Button } from "@/components/ui";
 
 const Homepage: FC = () => {
   const { t } = useTranslation("common");
@@ -14,6 +17,9 @@ const Homepage: FC = () => {
           consequuntur placeat corporis debitis dolorem ullam molestias facere, cumque laudantium. Rem deleniti
           exercitationem autem optio voluptatum!
         </p>
+        <Button className="mt-3">
+          <Link href={t("dynamicJobsPageUrl")}>{t("explorePositions")}</Link>
+        </Button>
       </section>
     </div>
   );

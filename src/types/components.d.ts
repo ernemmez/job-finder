@@ -29,6 +29,7 @@ interface IJobsPageProps {
 interface IErrorProps {
   status?: number;
   ua?: UserAgent;
+  result?: string;
 }
 
 interface ISidebarProps {
@@ -37,4 +38,13 @@ interface ISidebarProps {
 
 interface IResultProps {
   result: TJob[];
+  isLoading: boolean;
+}
+
+interface IJobItemProps {
+  job: TJob;
+}
+
+interface IJobsPaginationProps {
+  maxVisiblePages: number;
 }

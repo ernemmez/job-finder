@@ -35,3 +35,7 @@ In this project, commits are managed using Commitizen and Commitlint commit stan
 ```bash
 yarn dev
 ```
+
+## Important Note for Testing Mobile View on Desktop
+
+This project implements server-side rendering (SSR) with mobile detection. Therefore, if you switch to the mobile view on your desktop browser for testing purposes, please make sure to reload the page and select a mobile device from the inspector to ensure the mobile layout renders correctly.
